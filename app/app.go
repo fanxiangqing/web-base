@@ -21,10 +21,8 @@ func NewApp(port string) *App {
 	}
 }
 
-func (app *App) Run(r *gin.Engine, port string) error {
-	setBaseRouter(r)
-
-	return r.Run(":" + port)
+func (app *App) Run(port string) error {
+	return app.Engine.Run(":" + port)
 }
 
 func setBaseRouter(r *gin.Engine) {
