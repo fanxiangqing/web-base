@@ -2,8 +2,8 @@ package logger
 
 import (
 	"bufio"
-	"github.com/fanxiangqing/web-base/internal/lib/utils"
-	"github.com/fanxiangqing/web-base/internal/lib/utils/env"
+	"github.com/fanxiangqing/web-base/lib/utils"
+	"github.com/fanxiangqing/web-base/lib/utils/env"
 	"os"
 	"path/filepath"
 	"strings"

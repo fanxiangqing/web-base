@@ -2,7 +2,7 @@ package env
 
 import (
 	"errors"
-	"github.com/fanxiangqing/web-base/internal/lib/utils"
+	"github.com/fanxiangqing/web-base/lib/utils"
 	"os"
 	"reflect"
 	"strings"

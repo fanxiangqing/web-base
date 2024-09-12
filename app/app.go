@@ -1,9 +1,9 @@
 package app
 
 import (
-	_ "github.com/fanxiangqing/web-base/internal/lib/logger"
-	"github.com/fanxiangqing/web-base/internal/lib/utils/env"
-	"github.com/fanxiangqing/web-base/internal/middleware"
+	_ "github.com/fanxiangqing/web-base/lib/logger"
+	"github.com/fanxiangqing/web-base/lib/utils/env"
+	"github.com/fanxiangqing/web-base/middleware"
 	"github.com/gin-gonic/gin"
 )
 

@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"github.com/fanxiangqing/web-base/internal/lib/utils"
-	"github.com/fanxiangqing/web-base/internal/lib/utils/types"
+	"github.com/fanxiangqing/web-base/lib/utils"
+	"github.com/fanxiangqing/web-base/lib/utils/types"
 	"time"
 
 	"github.com/gin-gonic/gin"

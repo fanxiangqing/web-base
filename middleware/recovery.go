@@ -3,7 +3,7 @@ package middleware
 import (
 	"bytes"
 	"fmt"
-	"github.com/fanxiangqing/web-base/internal/lib/utils"
+	"github.com/fanxiangqing/web-base/lib/utils"
 	"io/ioutil"
 	"net/http/httputil"
 	"runtime"
