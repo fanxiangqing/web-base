@@ -15,7 +15,7 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-func Init() {
+func init() {
 	logFilename := "app"
 	if dir, err := os.Getwd(); err == nil {
 		split := strings.Split(dir, "/")
@@ -33,6 +33,7 @@ func Init() {
 	setupLoggingJson(logFile, 30, 10)
 	l, _ := logrus.ParseLevel(logLevel)
 	logrus.SetLevel(l)
+	logrus.Println("init logger success.")
 }
 
 // setupLoggingJson

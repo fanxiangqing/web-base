@@ -1,15 +1,11 @@
 package app
 
 import (
-	"github.com/fanxiangqing/web-base/internal/lib/logger"
+	_ "github.com/fanxiangqing/web-base/internal/lib/logger"
 	"github.com/fanxiangqing/web-base/internal/lib/utils/env"
 	"github.com/fanxiangqing/web-base/internal/middleware"
 	"github.com/gin-gonic/gin"
 )
-
-func init() {
-	logger.Init()
-}
 
 func Run(r *gin.Engine, port string) error {
 	setBaseRouter(r)
