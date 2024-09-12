@@ -3,10 +3,10 @@ package middleware
 import (
 	"bytes"
 	"fmt"
+	"github.com/fanxiangqing/web-base/internal/lib/utils"
 	"io/ioutil"
 	"net/http/httputil"
 	"runtime"
-	"skiff-camp/internal/lib/utils"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -40,13 +40,13 @@ func Recovering(recoverFuncs ...gin.HandlerFunc) gin.HandlerFunc {
 						recoverFunc(ctx)
 					}
 				} else {
-					ctx.Set("code", utils.SystemError)
-					ctx.Set("message", utils.RespMsg[utils.SystemError])
+					ctx.Set("code", 1001)
+					ctx.Set("message", "系统错误")
 					//utils.SendResult(ctx,utils.SystemError,)
 					ctx.JSON(200, gin.H{
-						"code":    utils.SystemError,
+						"code":    1001,
 						"data":    utils.ResNil,
-						"message": utils.RespMsg[utils.SystemError],
+						"message": "系统错误",
 					})
 				}
 
