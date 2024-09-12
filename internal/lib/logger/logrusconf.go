@@ -3,8 +3,10 @@ package logger
 import (
 	"bufio"
 	"github.com/fanxiangqing/web-base/internal/lib/utils"
+	"github.com/fanxiangqing/web-base/internal/lib/utils/env"
 	"os"
 	"path/filepath"
+	"strings"
 	"time"
 
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
@@ -13,9 +15,22 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-func Init(logFile, logLevel string, maxRemainCnt uint, rotationTime time.Duration) {
+func Init() {
+	logFilename := "app"
+	if dir, err := os.Getwd(); err == nil {
+		split := strings.Split(dir, "/")
+		logFilename = split[len(split)-1]
+	}
+
+	logFile := "./logs/" + logFilename
+
+	logLevel := "debug"
+	if env.Env.EnvMode == env.EnvModeProd {
+		logLevel = "info"
+	}
+
 	// 设置日志
-	setupLoggingJson(logFile, maxRemainCnt, rotationTime)
+	setupLoggingJson(logFile, 30, 10)
 	l, _ := logrus.ParseLevel(logLevel)
 	logrus.SetLevel(l)
 }
