@@ -7,9 +7,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Run(r *gin.Engine, port string) error {
+func init() {
 	logger.Init()
+}
 
+func Run(r *gin.Engine, port string) error {
 	setBaseRouter(r)
 
 	return r.Run(":" + port)
