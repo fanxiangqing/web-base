@@ -7,7 +7,21 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Run(r *gin.Engine, port string) error {
+type App struct {
+	Port   string
+	Engine *gin.Engine
+}
+
+func NewApp(port string) *App {
+	r := gin.New()
+	setBaseRouter(r)
+	return &App{
+		Engine: r,
+		Port:   port,
+	}
+}
+
+func (app *App) Run(r *gin.Engine, port string) error {
 	setBaseRouter(r)
 
 	return r.Run(":" + port)
